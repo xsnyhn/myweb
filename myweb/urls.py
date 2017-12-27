@@ -19,11 +19,12 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 # from app1.views import *  app1.views都导入过来，不推荐这么做，建议使用include
-from .views import firstpage
+from .views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', firstpage, name='home'),
+    url(r'^login$', mylogin),
     url(r'^app1/', include('app1.urls')),
 ]
 
